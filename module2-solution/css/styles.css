@@ -20,7 +20,7 @@ h1 {
 h2 {
 	font-size: 1.5em;
 	text-align: left;
-	margin: 30px 10px;
+	margin: 30px 20px;
 	font-family: Georgia, serif;
 }
 
@@ -32,7 +32,7 @@ section {
 	position: relative;
 	background-color: #CDE4F5;
 	border: 1px solid #000000;
-	margin: 10px;
+	margin: 20px;
 	height: 200px;
 	overflow: hidden;
 }
