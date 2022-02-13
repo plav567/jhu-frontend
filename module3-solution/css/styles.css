@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+body {
+	background-color: #F1F6F9;
+	color: #060C0E;
+}
+
+/** Start of header styles **/
+#header-nav {
+	background-color: #254956;
+	border: 0;
+	border-radius: 0;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.navbar-brand h1 {
+	color: #FCF8ED;
+	font-size: 1.75em;
+	margin: 0;
+	line-height: .75;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #FCF8ED;
+}
+
+.navbar-header button.navbar-toggle:hover, .navbar-header button.navbar-toggle:focus{
+  background-color: #2A9D8F;
+}
+
+#collapsible-nav {
+	margin-top: 0.5em;
+	margin-bottom: -0.5em;
+}
+
+#nav-list {
+	background-color: #376D81;
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+
+#nav-list a {
+	color: #FCF8ED;
+	text-align: center;
+}
+
+#nav-list a:hover {
+	background-color: #2A9D8F;
+}
+/** End of header styles **/
+
+/** Start of main content **/
+#main-content .food-card {
+	margin: 1em 0em;
+	border: 1px solid #C6DEE7;
+	padding: 0em 1.5em;
+	padding-bottom: 1.5em;
+	background-color: #C6DEE7;
+}
+
+/** End of main content **/
