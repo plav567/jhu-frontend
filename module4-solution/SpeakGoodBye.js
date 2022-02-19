@@ -20,6 +20,13 @@
 	  console.log(speakWord + " " + name);
 	}
 
+	// Method speakSimple that is externally exposed similar to speak
+	// speakSimple should return the greeting concatenated 
+	// to the passed in name argument
+	byeSpeaker.speakSimple = function (name) {
+		return (speakWord + " " + name);
+	}
+
 	// STEP 9: Expose the 'byeSpeaker' object to the global scope. Name it
 	// 'byeSpeaker' on the global scope as well.
 	// xxxx.xxxx = byeSpeaker;

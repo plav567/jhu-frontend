@@ -67,4 +67,58 @@ WARNING!!! WARNING!!!
       helloSpeaker.speak(names[name]);
     }
   }
+
+  // Use map function to create an array based on the names array
+  // The array will contain the greetings based on the names with the same rules
+  // as implemented previously
+  // The function passed into the map function should be a separate named function
+
+  var speakSimple = function(name) {
+    var firstLetter = name.charAt(0).toLowerCase();
+
+    if (firstLetter === 'j') {
+      return byeSpeaker.speakSimple(name);
+    } else {
+      return helloSpeaker.speakSimple(name);
+    }
+  };
+
+  var simpleGreetings = names.map(speakSimple);
+
+  for (greeting in simpleGreetings) {
+    console.log(simpleGreetings[greeting]);
+  }
+
+  // Use reduce function to create 2 separate arrays:
+  // One with all the hello greetings
+  // And another with all the goodbye greetings
+  // Loop over each array and print out the greetings
+  // with console.log
+
+  var initialValue = {hello:[], bye:[]};
+
+  var speakSeparate = function (separateGreetings, name, index, array) {
+    var simpleGreeting = speakSimple(name);
+    var firstLetter = simpleGreeting.charAt(0).toLowerCase();
+
+    if (firstLetter === 'h') {
+        separateGreetings.hello[separateGreetings.hello.length] = simpleGreeting;
+    } else {
+        separateGreetings.bye[separateGreetings.bye.length] = simpleGreeting;
+    }
+
+    return separateGreetings;
+  };
+
+  var separateGreetings = names.reduce(speakSeparate, initialValue);
+
+  for (var greeting in separateGreetings.hello) {
+    console.log(separateGreetings.hello[greeting]);
+  }
+
+  for (var greeting in separateGreetings.bye) {
+    console.log(separateGreetings.bye[greeting]);
+  }
+
+
 }) (window);
