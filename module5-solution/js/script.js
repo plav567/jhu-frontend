@@ -22,6 +22,7 @@ var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
+var aboutHtml = "snippets/about.html"
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -342,6 +343,54 @@ function insertItemPortionName(html,
   portionValue = "(" + portionValue + ")";
   html = insertProperty(html, portionPropName, portionValue);
   return html;
+}
+
+// Load the about view
+dc.loadAbout = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    aboutHtml,
+    buildAndShowAboutHTML,
+    false
+  );
+};
+
+// Build and show the about view
+function buildAndShowAboutHTML() {
+  $ajaxUtils.sendGetRequest(
+    aboutHtml,
+    function (aboutHtml) {
+
+      // Math.random produces a number between 0 and 1, not including 1
+      // Select a random number between 1 and 5
+      var randomNumberStars = Math.floor(Math.random() * 5) + 1;
+      var filledStar = "fa fa-star";
+      var emptyStar = "fa fa-star-o";
+
+      var finalHtml = '<section class="row">';
+      finalHtml += '<div class="text-center rating">';
+      finalHtml += aboutHtml;
+
+      for (var i = 1; i <= randomNumberStars; i++) {
+        var starNum = "star" + i;
+        finalHtml = insertProperty(finalHtml, starNum, filledStar);
+      }
+
+      for (var i = randomNumberStars + 1; i <=5; i++) {
+        var starNum = "star" + i;
+        finalHtml = insertProperty(finalHtml, starNum, emptyStar);
+      }
+
+      finalHtml += "&nbsp&nbsp&nbsp" + randomNumberStars + "-star rating";
+
+      finalHtml += "</div>";
+      finalHtml += "</section>";
+
+      insertHtml("#main-content", finalHtml);
+
+    },
+    false
+  );
 }
 
 
