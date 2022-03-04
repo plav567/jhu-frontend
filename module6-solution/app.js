@@ -13,6 +13,10 @@
       console.log("lunch dishes: " + $scope.lunchDishes);
       var message = determineMessage($scope.lunchDishes);
       $scope.lunchMessage = message;
+      // Apply style to the message
+      $scope.messageColor = applyMessageStyle($scope.lunchMessage);
+      // Apply style to the message border
+      $scope.messageBorder = applyBorderStyle($scope.lunchMessage);
     };
 
     function determineMessage(input) {
@@ -41,6 +45,21 @@
       }
     }
 
+    function applyMessageStyle(message) {
+      if (message === "Enjoy!") {
+        return 'green';
+      } else if (message === "Too much!") {
+        return 'red';
+      }
+    }
+
+    function applyBorderStyle(message) {
+      if (message === "Enjoy!" || message === "Too much!") {
+        return '1px solid green';
+      } else if (message === "Please enter data first.") {
+        return '1px solid red';
+      }
+    }
 
   }
 })();
