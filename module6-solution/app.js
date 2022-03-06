@@ -47,17 +47,17 @@
 
     function applyMessageStyle(message) {
       if (message === "Enjoy!") {
-        return 'green';
+        return 'greenMessage';
       } else if (message === "Too much!") {
-        return 'red';
+        return 'redMessage';
       }
     }
 
     function applyBorderStyle(message) {
       if (message === "Enjoy!" || message === "Too much!") {
-        return '1px solid green';
+        return 'greenBorder';
       } else if (message === "Please enter data first.") {
-        return '1px solid red';
+        return 'redBorder';
       }
     }
 
