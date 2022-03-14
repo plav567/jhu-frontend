@@ -3,7 +3,8 @@
   angular.module('ShoppingListCheckOff', [])
   .controller('ToBuyController', ToBuyController)
   .controller('AlreadyBoughtController', AlreadyBoughtController)
-  .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
+  .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
+  .filter('priceFormat', PriceFormatFilter);
 
   // Inject service into controller
   ToBuyController.$inject = ['ShoppingListCheckOffService'];
@@ -20,12 +21,20 @@
   }
 
   // Inject service into controller
-  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
+  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService', 'priceFormatFilter'];
   // Controller for "bought" shopping list
-  function AlreadyBoughtController(ShoppingListCheckOffService) {
+  function AlreadyBoughtController(ShoppingListCheckOffService, priceFormatFilter) {
     var itemTracker = this;
 
     itemTracker.items = ShoppingListCheckOffService.getBoughtItems();
+
+    itemTracker.calculatePrice = function(pricePerItem, quantity) {
+      return pricePerItem * quantity;
+    }
+
+    itemTracker.formatPrice = function() {
+      return priceFormatFilter();
+    };
   }
 
   // Shopping list check off service
@@ -34,11 +43,11 @@
 
     // Items to buy
     var toBuyItems = [
-      {name: "cookies", quantity: 5},
-      {name: "chips", quantity: 2},
-      {name: "water", quantity: 20},
-      {name: "ice cream", quantity: 2},
-      {name: "noodles", quantity: 10},
+      {name: "cookies", quantity: 5, pricePerItem: 2.32},
+      {name: "chips", quantity: 2, pricePerItem: 1.50},
+      {name: "water", quantity: 20, pricePerItem: 1.24},
+      {name: "ice cream", quantity: 2, pricePerItem: 5.12},
+      {name: "noodles", quantity: 10, pricePerItem: 7.49}
     ];
     // Bought items
     var boughtItems = [];
@@ -57,5 +66,12 @@
     service.getBoughtItems = function() {
       return boughtItems;
     }
+  }
+
+  // Filter factory function
+  function PriceFormatFilter() {
+    return function (price) {
+      return "$$" + price;
+    };
   }
 })();
