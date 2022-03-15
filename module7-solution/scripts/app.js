@@ -45,7 +45,7 @@
     var toBuyItems = [
       {name: "cookies", quantity: 5, pricePerItem: 2.32},
       {name: "chips", quantity: 2, pricePerItem: 1.50},
-      {name: "water", quantity: 20, pricePerItem: 1.24},
+      {name: "water", quantity: 20, pricePerItem: 1},
       {name: "ice cream", quantity: 2, pricePerItem: 5.12},
       {name: "noodles", quantity: 10, pricePerItem: 7.49}
     ];
