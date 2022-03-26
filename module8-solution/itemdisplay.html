@@ -1,0 +1,25 @@
+<div class="container-fluid" id="results">
+  <!-- <ol> -->
+    <div class="row" ng-repeat="item in nidc.items">
+      <!-- <li ng-repeat="item in nidc.items"> -->
+        <div class="col-xs-3">
+          {{ item.name }}
+        </div>
+        <div class="col-xs-1">
+          {{ item.short_name }}
+        </div>
+        <div class="col-xs-5">
+          {{ item.description }}
+        </div>
+        <div class="col-xs-3">
+          <button class="btn btn-secondary" ng-click="nidc.onRemove({index: $index});"> Don't want this one!</button>
+        </div>
+        <!-- <button ng-click="list.badRemove($index);">Bad Remove Item</button>
+        <button ng-click="list.onRemove({index: $index});">Remove Item</button> -->
+      <!-- </li> -->
+    </div>
+  <!-- </ol> -->
+  <div class="row" ng-if="nidc.searched && nidc.items.length == 0">Nothing found</div>
+
+
+</div>

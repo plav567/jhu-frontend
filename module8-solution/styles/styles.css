@@ -5,6 +5,14 @@ input[type="text"] {
   width: 200px;
   float: left;
 }
+#results {
+  margin-top: 100px;
+  border-top: black 1px solid;
+}
+.row {
+  border-bottom: black 1px solid;
+  padding: 15px 0px;
+}
 .narrow-button {
   float: left;
   margin-left: 10px;
