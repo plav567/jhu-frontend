@@ -13,3 +13,6 @@ li > button {
 button > span {
   color: green;
 }
+input[type=number] {
+  width: 75px;
+}
