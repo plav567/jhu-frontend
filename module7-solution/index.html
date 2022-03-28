@@ -17,7 +17,7 @@
        <h2>To Buy:</h2>
        <ul>
          <li ng-repeat="item in toBuy.items">
-           Buy <input type="number" ng-model="item.quantity" placeholder="{{item.quantity}}"> {{ item.name }} at price ${{ item.pricePerItem }}
+           Buy <input type="number" ng-model="item.quantity" placeholder="{{item.quantity}}"> {{ item.name }} at price {{ item.pricePerItem | currency }}
            <button class="btn btn-default" ng-click="toBuy.buyItem($index);"><span class="glyphicon glyphicon-ok"></span> Buy Item</button>
          </li>
        </ul>
