@@ -2,15 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Restaurant Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
-  <body>
+  <body ng-app="MenuApp">
+    <div class="container">
+
+      <ui-view></ui-view>
+
+    </div>
 
     <!-- import angular libraries -->
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
+    <!-- modules -->
+    <script src="scripts/menuapp.module.js"></script>
+    <script src="scripts/data.module.js"></script>
+    <!-- routes -->
+    <script src="scripts/routes.js"></script>
+    <!-- artifacts -->
+    <script src="scripts/menudata.service.js"></script>
+    <script src="scripts/categories.component.js"></script>
+    <script src="scripts/items.component.js"></script>
+    <script src="scripts/categories.controller.js"></script>
+    <script src="scripts/items.controller.js"></script>
   </body>
 </html>
