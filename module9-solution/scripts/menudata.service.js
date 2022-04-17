@@ -36,7 +36,7 @@
         }
       }).then(function (response) {
         console.log(response.data.menu_items);
-        return response.data.menu_items;
+        return response.data;
       }).catch(function (error) {
         console.log(error.message);
       });

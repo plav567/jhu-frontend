@@ -1,3 +1,6 @@
-<h2> Items </h2>
+<div class="nav">
+  <a ui-sref="homeView">Home</a>&nbsp&gt&nbsp<a ui-sref="categoriesView">Categories</a>&nbsp&gt&nbsp{{ itemsCtrl.category }}
+</div>
+<hr>
 
-<menu-items items="itemsCtrl.items"></menu-items>
+<menu-items items="itemsCtrl.items" category="itemsCtrl.category"></menu-items>

@@ -7,7 +7,7 @@
   ItemsController.$inject = ['MenuDataService', 'items'];
   function ItemsController(MenuDataService, items) {
     var ctrl = this;
-    ctrl.items = items;
-    console.log(ctrl.items);
+    ctrl.items = items.menu_items;
+    ctrl.category = items.category.name;
   }
 })();
