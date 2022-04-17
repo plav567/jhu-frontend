@@ -27,7 +27,7 @@
         }]
       }
     })
-    .state('itemsView', {
+    .state('categoriesView.itemsView', {
       url: '/items/{shortName}',
       templateUrl: 'main-items.template.html',
       controller: 'ItemsController as itemsCtrl',

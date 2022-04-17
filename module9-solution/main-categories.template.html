@@ -2,7 +2,11 @@
   <a ui-sref="homeView">Home</a>&nbsp&gt&nbspCategories
 </div>
 <hr>
+<div class="row">
+  <div class="col-xs-6">
+    <h2> Categories </h2>
 
-<h2> Categories </h2>
-
-<menu-categories categories="categoriesCtrl.categories"></menu-categories>
+    <menu-categories categories="categoriesCtrl.categories"></menu-categories>
+  </div>
+  <ui-view></ui-view>
+</div>
