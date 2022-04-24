@@ -18,9 +18,8 @@
           ctrl.lastname,
           ctrl.email,
           ctrl.phone,
-          ctrl.dish
+          response.data
         );
-        console.log(SignupService.getUserInfo());
       }).catch(function (error) {
         ctrl.validDish = false;
       })
