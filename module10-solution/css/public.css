@@ -113,6 +113,16 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/* SIGN UP FORM */
+.form {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.error-text {
+  color: #f6b319;
+}
+/* END SIGN UP FORM */
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
