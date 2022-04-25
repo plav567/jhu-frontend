@@ -47,22 +47,29 @@
              ng-model="signupCtrl.dish"
              ng-minlength="2"
              pattern="[A-Z]\d+"
-             required>
-      <span ng-if="signup.dish.$invalid && signup.dish.$touched"
+             required
+             favoritedish />
+      <span ng-if="signup.dish.$invalid && signup.dish.$touched
+                   && !signup.dish.$error.favoritedish"
          class="error-text">
          Menu number must have valid format of a capital letter followed by numbers
+      </span>
+      <span ng-if="signup.dish.$pending">
+        Checking if dish is valid...
+      </span>
+      <span ng-if="(signupCtrl.submitted && !signupCtrl.validDish)
+                   || signup.dish.$error.favoritedish"
+            class="error-text">
+        No menu number exists.
       </span>
     </div>
     <div class="form-group">
       <button class="btn btn-primary"
-              ng-disabled="signup.$invalid"
+              ng-disabled="signup.$invalid || signup.dish.$pending.favoritedish"
               ng-click="signupCtrl.submitForm()">Submit</button>
     </div>
     <span ng-if="signupCtrl.submitted && signupCtrl.validDish">
       Your information has been saved.
-    </span>
-    <span ng-if="signupCtrl.submitted && !signupCtrl.validDish">
-      No menu number exists.
     </span>
   </form>
 </div>
