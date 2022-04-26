@@ -33,7 +33,6 @@
       controller: 'ItemsController as itemsCtrl',
       resolve: {
         items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
-          console.log($stateParams.shortName);
           return MenuDataService.getItemsForCategory($stateParams.shortName);
         }]
       }

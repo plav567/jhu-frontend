@@ -8,6 +8,5 @@
   function CategoriesController(MenuDataService, categories) {
     var ctrl = this;
     ctrl.categories = categories;
-    console.log(ctrl.categories);
   }
 })();
