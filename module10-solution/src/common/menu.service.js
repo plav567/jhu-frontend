@@ -33,7 +33,6 @@ function MenuService($http, ApiPath) {
     if (itemShortName) {
       endpoint += itemShortName + '.json'
     }
-
     return $http.get(ApiPath + endpoint).then(function (response) {
       return response;
     });
