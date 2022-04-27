@@ -1,23 +1,57 @@
 <div class="container">
   <div ng-if="myinfoCtrl.userInfo.firstName">
     <h2>User Information</h2>
-    First name: {{ myinfoCtrl.userInfo.firstName }}
-    <br>
-    Last name: {{ myinfoCtrl.userInfo.lastName }}
-    <br>
-    Email: {{ myinfoCtrl.userInfo.email }}
-    <br>
-    Phone number: {{ myinfoCtrl.userInfo.phone }}
-    <br>
-    Favorite dish: {{ myinfoCtrl.userInfo.dish.short_name }}
-    <br>
-    <div class="menu-item-photo">
-      <img class="img-responsive" width="250" height="150"
-           ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.userInfo.dish.short_name}}.jpg"
-           alt="{{myinfoCtrl.userInfo.dish.name}}">
+    <div class="row">
+      <div class="col-sm-3">
+        First name:
+      </div>
+      <div class="col-sm-5">
+        {{ myinfoCtrl.userInfo.firstName }}
+      </div>
     </div>
-    {{ myinfoCtrl.userInfo.dish.name }}
-    {{ myinfoCtrl.userInfo.dish.description }}
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        Last name:
+      </div>
+      <div class="col-sm-5">
+        {{ myinfoCtrl.userInfo.lastName }}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        Email:
+      </div>
+      <div class="col-sm-5">
+        {{ myinfoCtrl.userInfo.email }}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        Phone number:
+      </div>
+      <div class="col-sm-5">
+        {{ myinfoCtrl.userInfo.phone }}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        Favorite dish:
+      </div>
+      <div class="col-sm-5">
+        {{ myinfoCtrl.userInfo.dish.short_name }}: {{ myinfoCtrl.userInfo.dish.name }}
+        <br>
+        <img class="img-responsive" width="250" height="150"
+             ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.userInfo.dish.short_name}}.jpg"
+             alt="{{myinfoCtrl.userInfo.dish.name}}">
+        <div class="menu-item-details">
+          {{ myinfoCtrl.userInfo.dish.description }}
+        </div>
+      </div>
+    </div>
   </div>
   <span ng-if="!myinfoCtrl.userInfo.firstName">
     Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a>
